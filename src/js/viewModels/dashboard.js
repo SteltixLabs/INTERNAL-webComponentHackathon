@@ -1,4 +1,4 @@
-define(['ojs/ojcore', 'knockout', 'jquery', 'ais', 'ds', 'jet-composites/filter-table/loader', 'jet-composites/overview-card/loader'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ais', 'ds', 'jet-composites/filter-table/loader', 'jet-composites/sign-in/loader'],
   function (oj, ko, $, ais, ds) {
 
     function DashboardViewModel() {
@@ -8,7 +8,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ais', 'ds', 'jet-composites/filter-
       // for web component pattern
       // data service delivers for filter-table component --- data prop requirements
 
-
+      self.handleClick = function(evt){
+        console.log(evt);
+      }
       self.itemData = ds.getItemsStatic();
       ds.init().then(function (data) {
         console.log(data)

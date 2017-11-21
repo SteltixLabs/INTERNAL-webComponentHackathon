@@ -1,0 +1,27 @@
+{
+  "name": "sign-in",
+  "displayName": "sign-in",
+  "description": "Sign in to the application",
+  "version": "1.0.0",
+  "jetVersion": "^4.1.0",
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "cb" : {
+      "type": "function"
+    }
+  },
+  "methods": {
+
+  },
+  "events": {
+
+  },
+  "slots": {
+
+  }
+}
