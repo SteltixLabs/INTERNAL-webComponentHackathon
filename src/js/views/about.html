@@ -5,6 +5,27 @@
 <div class="oj-hybrid-padding">
   <h1>About this project</h1>
   <div>
-<p>This dashboard is the product of the 2018 Steltix / CodeX hack-a-thon.</p>
+<!-- <p>This dashboard is the product of the 2018 Steltix / CodeX hack-a-thon.</p> -->
+<!-- WITH JS TEMPLATE PATTERN (ko) -->
+<table>
+  <thead>
+    <tr>
+      <td>Item No</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody data-bind="foreach: itemsArray">
+    <tr>
+      <td data-bind="text: LITM"></td>
+      <td data-bind="text: DSC1"></td>
+
+
+    </tr>
+  </tbody>
+</table>
+
+<!-- WITH WEB CCA COMPONENT -->
+<filter-table tableid="items" filter="" data={{itemData}} onrowclick="{{handleRowClick}}"></filter-table>
+
   </div>
 </div>

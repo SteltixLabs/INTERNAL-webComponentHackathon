@@ -1,4 +1,4 @@
-define(['ojs/ojcore', 'knockout', 'jquery', 'ais', 'ds', 'jet-composites/filter-table/loader', 'jet-composites/sign-in/loader'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ais', 'ds', 'jet-composites/filter-table/loader', 'jet-composites/location-component/loader'],
   function (oj, ko, $, ais, ds) {
 
     function DashboardViewModel() {
@@ -62,10 +62,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ais', 'ds', 'jet-composites/filter-
         //   $.each(kys, function(idx,obj) {
         //     tableEl.append('<tr><td>'+obj+'</td><td>'+o[obj]+'</td></tr>')
         //   });
-
+        //
         // })
-
-
+        //
+        //
         // inject custom components
         // for(var x=0;x<15;x++){
         //   $('#appHolder').append('<overview-card name="name" maincolor="#c1c1c1" highlight="#B3CD62" observables="{{cachedNumber}}" clicked="{{handleRowClick}}" icon="home-icon-24"></overview-card>')
