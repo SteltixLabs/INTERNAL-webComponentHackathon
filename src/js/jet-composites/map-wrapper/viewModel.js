@@ -29,6 +29,11 @@ define(
         self.distance = ko.observable();
         self.duration = ko.observable();
 
+        self.distanceWalk = ko.observable();
+        self.durationWalk = ko.observable();
+
+        self.message = ko.observable();
+
 
         self.width = ko.observable("400px");
         self.height = ko.observable("400px");
@@ -71,13 +76,14 @@ define(
                                   map: map
                                 });
 
-              var origin1 = 'Wynberg, Cape Town' //new google.maps.LatLng(55.930385, -3.118425);
+              //var origin1 = 'Wynberg, Cape Town' //new google.maps.LatLng(55.930385, -3.118425);
               //var origin2 = 'Woodstock, ';
 
-              var destinationA = 'Woodstock, Cape Town';
+              //var destinationA = 'Woodstock, Cape Town';
               //var destinationB = new google.maps.LatLng(50.087692, 14.421150);
 
               var service = new google.maps.DistanceMatrixService();
+
               service.getDistanceMatrix(
                 {
                   origins: [startFrom],
@@ -91,13 +97,38 @@ define(
                 }, callback);
 
 
-                    function callback(response, status) {
-                      //alert(response);
-                      //alert(status);
-                      self.distance('Distance: ' + response.rows[0].elements[0].distance.text);
-                      self.duration('Duration: ' + response.rows[0].elements[0].duration.text);
-                      console.log(response);
-                    }
+                function callback(response, status) {
+                  //alert(response);
+                  //alert(status);
+                  self.distance('Distance: ' + response.rows[0].elements[0].distance.text);
+                  self.duration('Duration: ' + response.rows[0].elements[0].duration.text);
+                  // var timeDuration = self.duration(response.rows[0].elements[0].duration.text);
+                  self.message("We recommend that you take a Taxi which will get you in less than " + response.rows[0].elements[0].duration.text);
+                  console.log(response);
+                }
+
+              service.getDistanceMatrix(
+                {
+                  origins: [startFrom],
+                  destinations: [goTo],
+                  travelMode: 'WALKING',
+                  //transitOptions: TransitOptions,
+                  //drivingOptions: DrivingOptions,
+                  //unitSystem: UnitSystem,
+                  avoidHighways: true,
+                  avoidTolls: true,
+                }, callbackWalk);
+
+
+                function callbackWalk(response, status) {
+                  //alert(response);
+                  //alert(status);
+                  self.distanceWalk('Distance: ' + response.rows[0].elements[0].distance.text);
+                  self.durationWalk('Duration: ' + response.rows[0].elements[0].duration.text);
+                  // var timeDuration = self.duration(response.rows[0].elements[0].duration.text);
+                  // self.message("We recommend that you take a Taxi which will get you in less than " + response.rows[0].elements[0].duration.text);
+                  console.log(response);
+                }
 
 
             // {lat: 34, lng: -40.605}

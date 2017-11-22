@@ -3,5 +3,8 @@ map-wrapper:not(.oj-complete){
 }
 
 map-wrapper{
+}
 
+.container{
+  background-color: yellow;
 }
