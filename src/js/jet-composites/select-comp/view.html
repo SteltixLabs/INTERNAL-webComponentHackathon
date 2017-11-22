@@ -1,0 +1,23 @@
+<!--
+  Copyright (c) 2015, 2017, Oracle and/or its affiliates.
+  The Universal Permissive License (UPL), Version 1.0
+-->
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+      <div id="containerDiv">
+        <label for="select1">Select One with ArrayDataProvider</label>
+        <oj-select-one id="select1" style="max-width:20em"
+                       options="{{locationDP}}" 
+                       value="{{selectVal}}">
+        </oj-select-one>
+        <br/>
+        <br/>
+        <div>
+          <label for="selectedval">Current selected value is</label>
+          <span id="selectedval" data-bind="text: selectVal"></span>
+        </div>
+      </div>
+
+
+    </div>
+  </div>

@@ -1,4 +1,4 @@
-define(['ojs/ojcore', 'knockout', 'jquery', 'ais', 'ds', 'jet-composites/filter-table/loader', 'jet-composites/location-component/loader'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ais', 'ds', 'jet-composites/filter-table/loader', 'jet-composites/location-component/loader', 'jet-composites/map-wrapper/loader', 'jet-composites/select-comp/loader'],
   function (oj, ko, $, ais, ds) {
 
     function DashboardViewModel() {

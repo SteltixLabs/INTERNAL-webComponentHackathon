@@ -1,0 +1,7 @@
+select-comp:not(.oj-complete){
+  visibility: hidden;
+}
+
+select-comp{
+
+}
