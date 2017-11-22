@@ -26,6 +26,10 @@ define(
         self.longTo = ko.observable();
         self.latTo = ko.observable();
 
+        self.distance = ko.observable();
+        self.duration = ko.observable();
+
+
         self.width = ko.observable("400px");
         self.height = ko.observable("400px");
         self.clickhandler = function(evt){
@@ -53,17 +57,48 @@ define(
                   mapTypeId: google.maps.MapTypeId.ROADMAP
                  };
 
+                 var startFrom = new google.maps.LatLng(self.latFrom(), self.longFrom());
+                 var goTo = new google.maps.LatLng(self.latTo(), self.longTo());
                     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
                     var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(self.latFrom(), self.longFrom()),
+                        position: startFrom,
                         map: map
                       });
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
                               var marker2 = new google.maps.Marker({
-                                  position: new google.maps.LatLng(self.latTo(), self.longTo()),
+                                  position: goTo,
                                   map: map
                                 });
+
+              var origin1 = 'Wynberg, Cape Town' //new google.maps.LatLng(55.930385, -3.118425);
+              //var origin2 = 'Woodstock, ';
+
+              var destinationA = 'Woodstock, Cape Town';
+              //var destinationB = new google.maps.LatLng(50.087692, 14.421150);
+
+              var service = new google.maps.DistanceMatrixService();
+              service.getDistanceMatrix(
+                {
+                  origins: [startFrom],
+                  destinations: [goTo],
+                  travelMode: 'DRIVING',
+                  //transitOptions: TransitOptions,
+                  //drivingOptions: DrivingOptions,
+                  //unitSystem: UnitSystem,
+                  avoidHighways: true,
+                  avoidTolls: true,
+                }, callback);
+
+
+                    function callback(response, status) {
+                      //alert(response);
+                      //alert(status);
+                      self.distance(response.rows[0].elements[0].distance.text);
+                      self.duration(response.rows[0].elements[0].duration.text);
+                      console.log(response);
+                    }
+
 
             // {lat: 34, lng: -40.605}
             // var _kCord = new google.maps.LatLng(-36.874694, 174.735292);
