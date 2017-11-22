@@ -55,9 +55,9 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
       // Header
       // Application Name used in Branding Area
-      self.appName = ko.observable("CodeX Dashboard");
+      self.appName = ko.observable("Siyaya Dashboard");
       // User Info used in Global Navigation area
-      self.userLogin = ko.observable("user@codex.com");
+      self.userLogin = ko.observable("Undisputed@codex.com");
       // self.signout = ko.observable("Sign Out");
       // Footer
       function footerLink(name, id, linkTarget) {
