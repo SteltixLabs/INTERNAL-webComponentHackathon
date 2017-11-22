@@ -3,7 +3,7 @@
   The Universal Permissive License (UPL), Version 1.0
 -->
 <head>
-
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <label for="SelectFrom"><h2>Select Start Point:
 <select id="SelectFrom">
@@ -26,12 +26,12 @@
   <option value="LA">Langa</option>
 </select></h2>
 </label><br>
-<input type="button" name="name" data-bind="click:clickhandler"value="Go"><br></br>
+<input type="button" class='btn btn-primary btn-lg' name="name" data-bind="click:clickhandler"value="Go"><br></br>
 
 <div id="googleMap" data-bind="style: {height: height, width: width  }"></div>
 
 
-Distance : <p data-bind="text : distance"><br></p>
-Duration : <p data-bind="text: duration">
+ <p data-bind="text : distance"><br></p>
+<p data-bind="text: duration">
 
   </p>

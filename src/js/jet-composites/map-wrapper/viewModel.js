@@ -94,8 +94,8 @@ define(
                     function callback(response, status) {
                       //alert(response);
                       //alert(status);
-                      self.distance(response.rows[0].elements[0].distance.text);
-                      self.duration(response.rows[0].elements[0].duration.text);
+                      self.distance('Distance: ' + response.rows[0].elements[0].distance.text);
+                      self.duration('Duration: ' + response.rows[0].elements[0].duration.text);
                       console.log(response);
                     }
 
