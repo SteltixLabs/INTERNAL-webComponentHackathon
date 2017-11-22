@@ -6,12 +6,12 @@ define(
     ['ojs/ojcore', 'knockout', 'jquery'], function (oj, ko, $) {
     'use strict';
 
-    function signInModel(context) {
+    function LocationModel(context) {
         var self = this;
         self.composite = context.element;
         //Example observable
-        self.enterUsername = ko.observable(context.username);
-        self.enterPassword = ko.observable(context.password);
+        self.enterLocationFrm = ko.observable(context.locFrom);
+        self.enterLocationTo = ko.observable(context.locTo);
         context.props.then(function (propertyMap) {
             //Store a reference to the properties for any later use
             self.properties = propertyMap;
@@ -34,5 +34,5 @@ define(
     //signInModel.prototype.detached = function(context){
     //};
 
-    return signInModel;
+    return LocationModel;
 });
