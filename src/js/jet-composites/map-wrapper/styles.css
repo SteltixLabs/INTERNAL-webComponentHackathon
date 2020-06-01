@@ -1,0 +1,3 @@
+map-wrapper:not(.oj-complete){
+  visibility: hidden;
+}

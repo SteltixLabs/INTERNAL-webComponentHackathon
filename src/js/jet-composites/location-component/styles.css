@@ -1,0 +1,6 @@
+sign-in:not(.oj-complete){
+  visibility: hidden;
+}
+
+sign-in{
+}
